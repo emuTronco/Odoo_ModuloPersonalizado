@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Hotel",
+    'name': "Hospedaje",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Control de habitaciones BUENO""",
 
     'description': """
-        Long description of module's purpose
+        Modulo para controlar las habitaciones ocupadas del hotel y otros datos relacionados
     """,
 
-    'author': "My Company",
+    'author': "David",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -32,4 +31,5 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'application': True,
 }
