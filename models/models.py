@@ -28,7 +28,7 @@ class Huesped(models.Model):
     fumador = fields.Boolean('Fumador', help = 'Indica si prefieres una habitación de fumador')
 
      #Relaciones
-    habitacion_id = fields.Many2one('hospedaje.habitacion', string='Habitación')
+    habitacion_id = fields.Many2one('hospedaje.habitacion', string='Habitación', required=True)
 
 
 
@@ -42,7 +42,7 @@ class Habitacion(models.Model):
     temperatura = fields.Float('Temperatura', (3,1), default = 0.0)
 
     #Relaciones
-    huesped_ids = fields.One2many('hospedaje.huesped', 'huesped_id', string ='Huéspedes')
+    huesped_ids = fields.One2many('hospedaje.huesped', 'habitacion_id', string ='Huéspedes')
     limpieza_ids = fields.Many2many('hospedaje.limpieza', string='Historial de limpiezas')
 
 
@@ -54,8 +54,8 @@ class Limpieza(models.Model):
     turno = fields.Selection('Turno', turno = [('D','Dia'), ('T','Tarde'), ('N','Noche')])
     inicioLimpieza = fields.Date('Inicio de la limpieza')
 
-     #Relaciones
-     habitacion_ids = fields.Many2many('hospedaje.habitacion', string ='Habitaciones')
+    #Relaciones
+    habitacion_ids = fields.Many2many('hospedaje.habitacion', string ='Habitaciones')
 
     
 

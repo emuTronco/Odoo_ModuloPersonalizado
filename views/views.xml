@@ -40,16 +40,94 @@
     </record>
 -->
 
+    <!-- VISTAS DE HUESPED -->
+    <record model="ir.ui.view" id="hotel.huesped_list_view">
+      <field name="name">hotel.huesped.view.tree</field>
+      <field name="model">hotel.huesped</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="salida"/>
+          <field name="fumador"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hotel.huesped_form_view">
+        <field name="name">hotel.huesped.view.form</field>
+        <field name="model">hotel.huesped</field>
+        <field name="arch" type="xml">
+          <form string="Formulario de garaje">
+            <sheet>
+
+              <div class="oe_title">
+                <!-- <label class="oe_title_only" for="name" string="Dirección"/> -->
+                <h1>
+                  <field name="name" placeholder="Dirección"/>
+                </h1>
+              </div>
+
+                <group>
+                  <group>
+                    <separator string="Información general"/>
+                      <field name="plazas"/>
+                  </group>
+                </group>
+
+                  <group>
+                      <field name="coche_ids"/>
+                  </group>
+
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+    <!-- VISTAS DE HABITACION -->
+    <record model="ir.ui.view" id="hotel.habitacion_list_view">
+      <field name="name">hotel.habitacion.view.tree</field>
+      <field name="model">hotel.habitacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="numero"/>
+          <field name="personas"/>
+          <field name="temperatura"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- VISTAS DE LIMPIEZA -->
+    <record model="ir.ui.view" id="hotel.limpieza_list_view">
+      <field name="name">hotel.limpieza.view.tree</field>
+      <field name="model">hotel.limpieza</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="turno"/>
+          <field name="inicioLimpieza"/>
+        </tree>
+      </field>
+    </record>
+
+    <!--ACCIONES-->
+    <record model="ir.actions.act_window" id="hotel.huesped_action_window">
+      <field name="name">Huesped</field>
+      <field name="res_model">hotel.huesped</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
     <!-- Top menu item -->
-<!--
-    <menuitem name="aa_prueba" id="aa_prueba.menu_root"/>
--->
+        <menuitem name="Hotel" id="hotel.menu_root" web_icon="" />
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="aa_prueba.menu_1" parent="aa_prueba.menu_root"/>
-    <menuitem name="Menu 2" id="aa_prueba.menu_2" parent="aa_prueba.menu_root"/>
--->
+    <menuitem name="Huesped" id="hotel.huesped_menu" parent="hotel.menu_root" action="hotel.huesped_action_window"/>
+    <menuitem name="Habitacion" id="hotel.habitacion_menu" parent="hotel.menu_root" action="hotel.huesped_action_window"/>
+    <menuitem name="Limpieza" id="hotel.limpieza_menu" parent="hotel.menu_root" action="hotel.huesped_action_window"/>
+
     <!-- actions -->
+
 <!--
     <menuitem name="List" id="aa_prueba.menu_1_list" parent="aa_prueba.menu_1"
               action="aa_prueba.action_window"/>
