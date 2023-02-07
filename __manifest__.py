@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Hospedaje",
+    'name': "hospedaje",
 
     'summary': """
         Control de habitaciones BUENO""",

@@ -19,7 +19,7 @@
 
 from odoo import models, fields, api
 
-class Huesped(models.Model):
+class huesped(models.Model):
     _name = 'hospedaje.huesped'
     _description = 'Permite introducir los datos del huesped' 
 
@@ -33,7 +33,7 @@ class Huesped(models.Model):
 
 
     
-class Habitacion(models.Model):
+class habitacion(models.Model):
     _name = 'hospedaje.habitacion'
     _description = 'Permite definir las caracteristicas de la habitación' 
 
@@ -47,11 +47,11 @@ class Habitacion(models.Model):
 
 
 
-class Limpieza(models.Model):
+class limpieza(models.Model):
     _name = 'hospedaje.limpieza'
     _description = 'Permite introducir las caracteristicas de la limpieza de la habitación' 
 
-    turno = fields.Selection('Turno', turno = [('D','Dia'), ('T','Tarde'), ('N','Noche')])
+    turno = fields.Selection([('d','Dia'), ('t','Tarde'), ('n','Noche')])
     inicioLimpieza = fields.Date('Inicio de la limpieza')
 
     #Relaciones
