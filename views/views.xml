@@ -12,6 +12,40 @@
         </tree>
       </field>
     </record>
+
+    <record model="ir.ui.view" id="hospedaje.huesped_form_view">
+        <field name="name">hospedaje.huesped.view.form</field>
+        <field name="model">hospedaje.huesped</field>
+        <field name="arch" type="xml">
+          <form string="Formulario de huesped">
+            <sheet>
+
+              <div class="oe_title">
+                <h1>
+                  <field name="name" placeholder="Nombre"/>
+                </h1>
+              </div>
+
+                <group>
+                  <group>
+                    <separator string="Salida"/>
+                      <field name="salida"/>
+                      <separator string="Fumador"/>
+                      <field name="fumador"/>
+                  </group>
+                </group>
+
+                  <group>
+                    <group>
+                    <separator string="Número de la habitación"/>
+                      <field name="habitacion_id"/>
+                      </group>
+                  </group>
+
+            </sheet>
+          </form>
+        </field>
+    </record>
     
     <!-- VISTAS DE HABITACION -->
     <record model="ir.ui.view" id="hospedaje.habitacion_list_view">
@@ -26,6 +60,38 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="hospedaje.habitacion_form_view">
+        <field name="name">hospedaje.habitacion.view.form</field>
+        <field name="model">hospedaje.habitacion</field>
+        <field name="arch" type="xml">
+          <form string="Formulario de habitación">
+            <sheet>
+
+              <div class="oe_title">
+                <h1>
+                  <field name="numero" placeholder="Número"/>
+                </h1>
+              </div>
+
+                <group>
+                  <group>
+                    <separator string="Número de personas"/>
+                      <field name="personas"/>
+                      <separator string="Temperatura de la habitación"/>
+                      <field name="temperatura"/>
+                  </group>
+                </group>
+
+                  <group>
+                      <field name="huesped_ids"/>
+                      <field name="limpieza_ids"/>
+                  </group>
+
+            </sheet>
+          </form>
+        </field>
+    </record>
+
 
     <!-- VISTAS DE LIMPIEZA -->
     <record model="ir.ui.view" id="hospedaje.limpieza_list_view">
@@ -37,6 +103,35 @@
           <field name="inicioLimpieza"/>
         </tree>
       </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospedaje.limpieza_form_view">
+        <field name="name">hospedaje.limpieza.view.form</field>
+        <field name="model">hospedaje.limpieza</field>
+        <field name="arch" type="xml">
+          <form string="Formulario de limpieza">
+            <sheet>
+
+              <div class="oe_title">
+                <h1>
+                  <field name="turno" placeholder="Turno"/>
+                </h1>
+              </div>
+
+                <group>
+                  <group>
+                    <separator string="Inicio del turno"/>
+                      <field name="inicioLimpieza"/>
+                  </group>
+                </group>
+
+                  <group>
+                      <field name="habitacion_ids"/>
+                  </group>
+
+            </sheet>
+          </form>
+        </field>
     </record>
 
     <!--ACCIONES-->
