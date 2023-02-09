@@ -26,6 +26,7 @@ class huesped(models.Model):
     name = fields.Char('Nombre', required=True)
     salida = fields.Date('Dia de salida', required=True)
     fumador = fields.Boolean('Fumador', help = 'Indica si prefieres una habitación de fumador')
+    imagen = fields.Binary('Imagen', help='Introduzca la fotografía')
 
      #Relaciones
     habitacion_id = fields.Many2one('hospedaje.habitacion', string='Habitación', required=True)

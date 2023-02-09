@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_aa_prueba_aa_prueba,aa_prueba.aa_prueba,model_aa_prueba_aa_prueba,base.group_user,1,1,1,1
+access_hospedaje_limpieza_usuario,hospedaje.limpieza.usuario,model_hospedaje_limpieza,hospedaje.group_hospedaje_usuario,1,1,1,1
+access_hospedaje_habitacion_usuario,hospedaje.habitacion.usuario,model_hospedaje_habitacion,hospedaje.group_hospedaje_usuario,1,1,1,1
+access_hospedaje_huesped_usuario,hospedaje.huesped.usuario,model_hospedaje_huesped,hospedaje.group_hospedaje_usuario,1,0,0,0
+access_hospedaje_huesped_director,hospedaje.huesped.director,model_hospedaje_huesped,hospedaje.group_hospedaje_director,1,1,1,1

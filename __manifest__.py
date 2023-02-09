@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "hospedaje",
+    'name': "Hospedaje",
 
     'summary': """
         Control de habitaciones BUENO""",
@@ -23,7 +23,8 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/hospedaje.security.xml',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
     ],
