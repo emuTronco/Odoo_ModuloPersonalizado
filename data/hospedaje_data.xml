@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+
+          <record id="habitacion01" model="hospedaje.habitacion">
+            <field name="numero">2702</field>
+            <field name="personas">1</field>
+            <field name="temperatura">25.2</field>
+          </record>
+
+          <record id="habitacion02" model="hospedaje.habitacion">
+            <field name="numero">7387</field>
+            <field name="personas">4</field>
+            <field name="temperatura">25.7</field>
+          </record>
+
+          <record id="habitacion03" model="hospedaje.habitacion">
+            <field name="numero">0411</field>
+            <field name="personas">2</field>
+            <field name="temperatura">26.1</field>
+          </record>
+
+          <record id="huesped01" model="hospedaje.huesped">
+            <field name="name">David Patron</field>
+            <field name="salida">2022-02-27</field>
+            <field name="fumador">False</field>
+            <field name="habitacion_id" ref="habitacion01" />
+          </record>
+
+          <record id="huesped02" model="hospedaje.huesped">
+            <field name="name">Jihad Hassan (cazador de gatas)</field>
+            <field name="salida">2022-02-28</field>
+            <field name="fumador">True</field>
+            <field name="habitacion_id" ref="habitacion02" />
+          </record>          
+
+          <record id="limpieza01" model="hospedaje.limpieza">
+            <field name="turno">d</field>
+            <field name="inicioLimpieza">2022-02-28</field>
+            <field name="habitacion_ids" eval="[(6, 0, [ref('habitacion01'), ref('habitacion02')])]" />
+          </record>
+
+    </data>
+</odoo>
+

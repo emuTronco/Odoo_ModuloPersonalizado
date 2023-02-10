@@ -29,7 +29,7 @@ class huesped(models.Model):
     # imagen = fields.Binary('Imagen', help='Introduzca la fotografía')
 
      #Relaciones
-    habitacion_id = fields.Many2one('hospedaje.habitacion', string='Habitación' required=True)
+    habitacion_id = fields.Many2one('hospedaje.habitacion', string='Habitación')
 
 
 
@@ -53,7 +53,7 @@ class limpieza(models.Model):
     _description = 'Permite introducir las caracteristicas de la limpieza de la habitación' 
 
     turno = fields.Selection([('d','Dia'), ('t','Tarde'), ('n','Noche')])
-    inicioLimpieza = fields.Date('Inicio de la limpieza' required=True)
+    inicioLimpieza = fields.Date('Inicio de la limpieza', required=True)
 
     #Relaciones
     habitacion_ids = fields.Many2many('hospedaje.habitacion', string ='Habitaciones')
