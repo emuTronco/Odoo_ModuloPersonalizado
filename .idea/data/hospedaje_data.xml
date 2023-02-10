@@ -1,28 +1,55 @@
 <odoo>
     <data>
+<!--
+          <record id="object0" model="hospedaje.hospedaje">
+            <field name="name">Object 0</field>
+            <field name="value">0</field>
+          </record>
+
+          <record id="object1" model="hospedaje.hospedaje">
+            <field name="name">Object 1</field>
+            <field name="value">10</field>
+          </record>
+
+          <record id="object2" model="hospedaje.hospedaje">
+            <field name="name">Object 2</field>
+            <field name="value">20</field>
+          </record>
+
+          <record id="object3" model="hospedaje.hospedaje">
+            <field name="name">Object 3</field>
+            <field name="value">30</field>
+          </record>
+
+          <record id="object4" model="hospedaje.hospedaje">
+            <field name="name">Object 4</field>
+            <field name="value">40</field>
+          </record>
+-->
 
           <record id="huesped01" model="hospedaje.huesped">
             <field name="name">David Patron</field>
             <field name="salida">2023-02-27</field>
             <field name="fumador">True</field>
-            <field name="habitacion_id" ref="habitacion01" />
+            <!-- <field name="habitacion_id" ref="habitacion01" /> -->
           </record>
 
           <record id="huesped02" model="hospedaje.huesped">
             <field name="name">Jihad Hassan</field>
             <field name="salida">2023-02-29</field>
             <field name="fumador">False</field>
-            <field name="habitacion_id" ref="habitacion02" />
+            <!-- <field name="habitacion_id" ref="habitacion02" /> -->
           </record>          
 
           <record id="habitacion01" model="hospedaje.habitacion">
             <field name="numero">2702</field>
             <field name="personas">1</field>
             <field name="temperatura">25.2</field>
-            <field name="aparcamiento_id" ref="huesped01" />
+            
+            <!-- <field name="aparcamiento_id" ref="huesped01" /> -->
           </record>
 
-          <record id="habitacion02" model="hospedaje.habitacion">
+          <!-- <record id="habitacion02" model="hospedaje.habitacion">
             <field name="name">5678def</field>
             <field name="modelo">Citroen Xsara</field>
             <field name="construido">1995-06-10</field>
@@ -40,13 +67,13 @@
             <field name="averiado">True</field>
             <field name="descripcion">El pelotilla rojo</field>
             <field name="aparcamiento_id" ref="huesped01" />
-          </record>
+          </record> -->
 
           <record id="limpieza01" model="hospedaje.limpieza">
             <field name="fecha" eval="datetime.now()"/>
             <field name="turno">d</field>
             <field name="inicioLimpieza">2023-02-29</field>
-            <field name="habitacion_ids" eval="[(6, 0, [ref('habitacion01'), ref('habitacion02')])]" />
+            <!-- <field name="habitacion_ids" eval="[(6, 0, [ref('habitacion01'), ref('habitacion02')])]" /> -->
           </record>
 
     </data>
